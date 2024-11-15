@@ -9,7 +9,7 @@ vector<string> split(const string& str, const string delimiter)
 	while (endIndex != string::npos)
 	{
 		fruits.push_back(str.substr(startIndex, endIndex - startIndex));
-		startIndex = endIndex + 1;
+		startIndex = endIndex + delimiter.size();
 		endIndex = str.find(delimiter, startIndex);
 	}
 	fruits.push_back(str.substr(startIndex, endIndex - startIndex));
