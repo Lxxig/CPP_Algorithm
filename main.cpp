@@ -3,15 +3,26 @@ using namespace std;
 
 int main()
 {
-	int T;
-	cin >> T;
-	cin.ignore();
-	string Input;
+	string str = "love is";
+	str += " pain!";
 
-	for (int i = 0; i < T; i++)
+	cout << str << "의 사이즈: " << str.size() << "\n";
+	cout << "first Alphabet: " << *str.begin() << "\n";
+	cout << "second Alphabet: " << *(str.begin() + 1) << "\n";
+	cout << "third Alphabet: " << str[2] << "\n";
+	cout << "last Letter: " << *(str.end() - 1) << "\n";
+
+	str.insert(0, "test ");
+	cout << str << "\n";
+
+	str.erase(0, 5);
+	cout << str << "\n";
+
+	auto it = str.find("love");
+	if (it != string::npos)
 	{
-		getline(cin, Input);
+		cout << "포함하고 있음" << "\n";
 	}
 
-	return 0;
+	cout << str.substr(0, 4);
 }
