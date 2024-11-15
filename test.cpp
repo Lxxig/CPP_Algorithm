@@ -7,7 +7,7 @@ int main()
     cin >> N;
     vector<tuple<string, string, int>> VectorTuple(N);
 
-    cout << "| 성 | 이름 | 나이 " << "\n";
+    cout << "| LastName | FirstName | Age " << "\n";
 
     string firstName, LastName;
     int age;
