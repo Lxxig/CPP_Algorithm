@@ -1,28 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
+vector<string> split(const string& str, const string delimiter)
+{
+	vector<string> fruits;
+	auto endIndex = str.find(delimiter);
+	string::size_type startIndex = 0;
+
+	while (endIndex != string::npos)
+	{
+		fruits.push_back(str.substr(startIndex, endIndex - startIndex));
+		startIndex = endIndex + 1;
+		endIndex = str.find(delimiter, startIndex);
+	}
+	fruits.push_back(str.substr(startIndex, endIndex - startIndex));
+	return fruits;
+}
 
 int main()
 {
-	string str = "love is";
-	str += " pain!";
+	string str = "apple,banana,orange,grape";
+	vector<string> fruits =  split(str, ",");
 
-	cout << str << "의 사이즈: " << str.size() << "\n";
-	cout << "first Alphabet: " << *str.begin() << "\n";
-	cout << "second Alphabet: " << *(str.begin() + 1) << "\n";
-	cout << "third Alphabet: " << str[2] << "\n";
-	cout << "last Letter: " << *(str.end() - 1) << "\n";
-
-	str.insert(0, "test ");
-	cout << str << "\n";
-
-	str.erase(0, 5);
-	cout << str << "\n";
-
-	auto it = str.find("love");
-	if (it != string::npos)
+	for (const string& fruit : fruits)
 	{
-		cout << "포함하고 있음" << "\n";
+		cout << fruit << "\n";
 	}
-
-	cout << str.substr(0, 4);
 }
